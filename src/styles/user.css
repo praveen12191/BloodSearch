@@ -1,0 +1,161 @@
+/* From Uiverse.io by kennyotsu-monochromia */ 
+.card {
+    width: 700px;
+    height: 350px;
+    --black: #000000;
+    --ch-black: #141414;
+    --eer-black: #1b1b1b;
+    --night-rider: #2e2e2e;
+    --white: #ffffff;
+    --af-white: #f3f3f3;
+    --ch-white: #e1e1e1;
+    font-family: Helvetica, sans-serif;
+  }
+  
+  .wrapper {
+    margin: 2rem auto;
+    width: 250px;
+    font-size: small;
+  }
+  
+  .title {
+    display: flex; /* Enables Flexbox */
+    flex-direction: column; /* Aligns content vertically */
+    align-items: center; /* Centers content horizontally */
+    justify-content: center; /* Centers content vertically */
+    text-align: center; /* Ensures text alignment within */
+    color: #1b1b1b; /* Keeps existing color */
+    height: 100px; /* Adjusts height as needed */
+    margin: 0 auto; /* Centers the element itself */
+  }
+  
+  
+  .heading {
+    font-weight: bold;
+    letter-spacing: 7px;
+    font-size: 1.5rem;
+    position: relative;
+    margin-bottom: 6px;
+  }
+  
+  .heading::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #e8e8e8;
+    z-index: -1;
+    filter: blur(80px);
+    height: 50px;
+  }
+  
+  .color {
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .hex {
+    text-align: end;
+    font-family: monospace;
+    text-transform: uppercase;
+  }
+  
+  .black {
+    background: var(--black);
+    color: var(--ch-white);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  
+  .eerie-black {
+    background: var(--ch-black);
+    color: var(--ch-white);
+  }
+  
+  .chinese-black {
+    background: var(--eer-black);
+    color: var(--ch-white);
+  }
+  
+  .night-rider {
+    background: var(--night-rider);
+    color: var(--ch-white);
+  }
+  
+  .chinese-white {
+    background: var(--ch-white);
+    color: var(--night-rider);
+  }
+  
+  .anti-flash-white {
+    background: var(--af-white);
+    color: var(--night-rider);
+  }
+  
+  .white {
+    background: var(--white);
+    color: var(--night-rider);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  
+  .border {
+    color: var(--night-rider);
+    padding: 10px 10px;
+    text-align: center;
+  }
+  
+  .border span {
+    border-radius: 5px;
+    color: var(--ch-white);
+    padding: 2px 4px;
+    background-color: var(--night-rider);
+  }
+
+
+  /* From Uiverse.io by Galahhad */ 
+.checkbox {
+  display: none;
+}
+
+.slider {
+  width: 60px;
+  height: 30px;
+  background-color: lightgray;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  border: 4px solid transparent;
+  transition: .3s;
+  box-shadow: 0 0 10px 0 rgb(0, 0, 0, 0.25) inset;
+  cursor: pointer;
+}
+
+.slider::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  transform: translateX(-30px);
+  border-radius: 20px;
+  transition: .3s;
+  box-shadow: 0 0 10px 3px rgb(0, 0, 0, 0.25);
+}
+
+.checkbox:checked ~ .slider::before {
+  transform: translateX(30px);
+  box-shadow: 0 0 10px 3px rgb(0, 0, 0, 0.25);
+}
+
+.checkbox:checked ~ .slider {
+  background-color: #2196F3;
+}
+
+.checkbox:active ~ .slider::before {
+  transform: translate(0);
+}
+
+
