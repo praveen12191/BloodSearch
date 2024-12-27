@@ -79,6 +79,7 @@ p {
   justify-content: space-around; /* Space between rows */
   gap: 20px; /* Space between cards */
   margin: 20px auto;
+  margin-top: -100px;
   max-width: 1200px; /* Optional: restrict the width of the container */
 }
 
@@ -147,6 +148,7 @@ p {
   color: #ecdbdb; /* Dark color for readability */
   margin: 20px auto; /* Adds vertical spacing and centers the block */
   /* background: linear-gradient(90deg, #1369f3, #42a5f5);  */
+  margin-top: 30px;
   padding: 10px 20px; /* Padding for better spacing */
   border-radius: 8px; /* Rounded corners for a modern look */
   box-shadow: 0px 4px 6px rgba(227, 225, 225, 0.1); /* Subtle shadow for depth */

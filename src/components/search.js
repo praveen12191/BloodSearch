@@ -3,8 +3,10 @@ import { useEffect, useState } from "react";
 import Card from "./card";
 import { Toaster, toast } from "sonner";
 import '../styles/card.css';
+import { useNavigate } from "react-router-dom";
 
 const Search = () => {
+  const navigate = useNavigate()
   const [selectedState, setSelectedState] = useState("");
   const [state, setState] = useState([]);
   const [district, setDistrict] = useState([]);
@@ -60,7 +62,10 @@ const Search = () => {
       toast.error("No donor found in this location. Sorry!");
     }
   };
-  
+ 
+  const homebutton = ()=>{
+    navigate("/")
+  }
   useEffect(() => {
     getState();
     getGroup();
@@ -129,6 +134,24 @@ const Search = () => {
         </form>
       ) : (
         <div>
+          <div className="but flex items-center justify-center mt-4">
+      <button onClick={homebutton}>
+        <div className="svg-wrapper-1">
+          <div className="svg-wrapper">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="30"
+              height="30"
+              className="icon"
+            >
+              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path>
+            </svg>
+          </div>
+        </div>
+        <span>Home</span>
+      </button>
+    </div>
           <span className="header-text">Donor details for selected location</span>
         <div className="card-container">
           {data.map((item) => (

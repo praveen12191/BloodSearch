@@ -16,10 +16,10 @@ const Login = () => {
       email:email,
       phoneNumber:phoneNumber
     })
-    console.log(res);
     
     if(res.status === 200){
-      
+
+      sessionStorage.setItem("token", res.data.token)
       navigate("/userPage", { state: res.data});
     }
     else{

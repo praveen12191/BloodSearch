@@ -2,8 +2,12 @@ import "../styles/card.css";
 
 import PhoneIcon from "@mui/icons-material/Phone";
 import GroupIcon from "@mui/icons-material/Group";
+import { useNavigate } from "react-router-dom";
 const Card = ({data}) => {
+ 
   return (
+    <div>
+    
     <div className="flex items-center justify-center h-screen">
       <div class="book">
         <div>
@@ -12,13 +16,14 @@ const Card = ({data}) => {
             <PhoneIcon></PhoneIcon>{data.phoneNumber}
           </p>
           <p>
-            <GroupIcon></GroupIcon> Male
+            <GroupIcon></GroupIcon> {data.gender}
           </p>
         </div>
         <div class="cover">
-          <p>Praveen</p>
+          <p>{data.name}</p>
         </div>
       </div>
+    </div>
     </div>
   );
 };
