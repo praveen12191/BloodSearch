@@ -16,12 +16,12 @@ const Search = () => {
   const [data, setData] = useState([]);
 
   const getGroup = () => {
-    axios.get("http://localhost:4000/formData/groups")
+    axios.get("https://bloodsearchserver.onrender.com/formData/groups")
       .then((res) => setGroup(res.data));
   };
 
   const getState = () => {
-    axios.get("http://localhost:4000/formData/states")
+    axios.get("https://bloodsearchserver.onrender.com/formData/states")
       .then((res) => setState(res.data.states));
   };
 
@@ -38,7 +38,7 @@ const Search = () => {
 
   const formSubmit = async (e) => {
     e.preventDefault();
-    const url = "http://localhost:4000/user/search";
+    const url = "https://bloodsearchserver.onrender.com/user/search";
     try {
       const res = await axios.post(url, {
         state: selectedState,
