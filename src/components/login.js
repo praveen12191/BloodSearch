@@ -10,7 +10,7 @@ const Login = () => {
 
   const formSubmit = async (e) => {
     e.preventDefault();
-    let url = "http://localhost:4000/user/login";
+    let url = "https://bloodsearchserver.onrender.com/user/login";
     const res = await axios.post(url, {
       email: email,
       phoneNumber: phoneNumber,

@@ -31,11 +31,11 @@ const UsersPage = () => {
 
   // Fetch groups and states
   useEffect(() => {
-    axios.get("http://localhost:4000/formData/groups").then((res) => {
+    axios.get("https://bloodsearchserver.onrender.com/formData/groups").then((res) => {
       setGroupList(res.data || []);
     });
 
-    axios.get("http://localhost:4000/formData/states").then((res) => {
+    axios.get("https://bloodsearchserver.onrender.com/formData/states").then((res) => {
       setStateList(res.data?.states || []);
     });
   }, []);
@@ -62,7 +62,7 @@ const UsersPage = () => {
   const handleEditToggle = async () => {
     if (isEditable) {
       try {
-        const response = await axios.post("http://localhost:4000/user/update", {
+        const response = await axios.post("https://bloodsearchserver.onrender.com/user/update", {
           name: userData.name,
           age: age || userData.age,
           email: userData.email,

@@ -19,13 +19,13 @@ const Register = () => {
   const navigate = useNavigate();
 
   const getGroup = () => {
-    let url = "http://localhost:4000/formData/groups";
+    let url = "https://bloodsearchserver.onrender.com/formData/groups";
     axios.get(url).then((res) => {
       setGroup(res.data);
     });
   };
   const getState = () => {
-    let url = "http://localhost:4000/formData/states";
+    let url = "https://bloodsearchserver.onrender.com/formData/states";
     axios.get(url).then((res) => {
       setState(res.data.states);
     });
@@ -46,7 +46,7 @@ const Register = () => {
 
   const formSubmit = async (e) => {
     e.preventDefault();
-    let url = "http://localhost:4000/user/register";
+    let url = "https://bloodsearchserver.onrender.com/user/register";
     console.log(
       userName,
       age,
@@ -150,23 +150,29 @@ const Register = () => {
             </label>
 
             {/* Blood Group Select */}
-            <label className="input input-bordered flex items-center gap-2 flex-1">
-              <select
-                className="w-full bg-transparent text-white"
-                defaultValue=""
-                onChange={(e) => setBloodGroup(e.target.value)}
-              >
-                <option value="" disabled>
-                  Blood Group
-                </option>
-                {group &&
-                  group.map((group) => (
-                    <option key={group} value={group}>
-                      {group}
-                    </option>
-                  ))}
-              </select>
-            </label>
+           {/* Blood Group Select */}
+<label className="input input-bordered flex items-center gap-2 flex-1">
+  <select
+    className="w-full bg-transparent text-white focus:outline-none"
+    defaultValue=""
+    onChange={(e) => setBloodGroup(e.target.value)}
+  >
+    <option value="" disabled>
+      Blood Group
+    </option>
+    {group &&
+      group.map((group) => (
+        <option
+          key={group}
+          value={group}
+          className="bg-gray-700 text-white"
+        >
+          {group}
+        </option>
+      ))}
+  </select>
+</label>
+
           </div>
 
           {/* Gender Radio Buttons */}
@@ -196,7 +202,7 @@ const Register = () => {
           <div className="flex items-center gap-2 mt-2">
             <label className="input input-bordered flex items-center gap-2 flex-1">
               <select
-                className="w-full bg-transparent text-white"
+                className="w-full bg-transparent text-white focus:outline-none"
                 defaultValue=""
                 onChange={handleStateChange}
               >
@@ -204,7 +210,7 @@ const Register = () => {
                   Select State
                 </option>
                 {state.map((state) => (
-                  <option key={state.state} value={state.state}>
+                  <option key={state.state} value={state.state} className="bg-gray-700 text-white">
                     {state.state}
                   </option>
                 ))}
@@ -221,7 +227,7 @@ const Register = () => {
                   Select District
                 </option>
                 {district.map((district) => (
-                  <option key={district} value={district}>
+                  <option key={district} value={district} className="bg-gray-700 text-white">
                     {district}
                   </option>
                 ))}

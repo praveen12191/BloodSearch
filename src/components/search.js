@@ -113,7 +113,7 @@ const Search = () => {
         </form>
       ) : (
         <div>
-          <div className="but flex items-center justify-center mt-20">
+          <div className="but flex items-center justify-center mt-48">
             <button onClick={homebutton}>
               <div className="svg-wrapper-1">
                 <div className="svg-wrapper">
