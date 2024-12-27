@@ -1,14 +1,14 @@
 button {
     border: none;
     outline: none;
-    background-color: #6c5ce7;
+    background-color: rgb(37 99 235 / var(--tw-bg-opacity, 1));
     padding: 10px 20px;
     font-size: 12px;
     font-weight: 700;
     color: #fff;
     border-radius: 5px;
     transition: all ease 0.1s;
-    box-shadow: 0px 5px 0px 0px #a29bfe;
+    box-shadow: 0px 5px 0px 0px  #03f760;
   }
   
   button:active {
@@ -79,5 +79,10 @@ button {
     100% {
       background-position: 180px;
     }
+  }
+  
+
+  .formContainer {
+    width: 500px;  /* Set your desired width here */
   }
   

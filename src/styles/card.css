@@ -1,97 +1,3 @@
-/* From Uiverse.io by eslam-hany */ 
-.book {
-    position: relative;
-    border-radius: 10px;
-    width: 200px;
-    height: 220px;
-    background-color: whitesmoke;
-    border: 2px solid rgb(163, 184, 205);
-    -webkit-box-shadow: 1px 1px 12px #bd1b1b;
-    box-shadow: 1px 1px 12px #1369f3;
-    -webkit-transform: preserve-3d;
-    -ms-transform: preserve-3d;
-    transform: preserve-3d;
-    -webkit-perspective: 2000px;
-    perspective: 2000px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    color: #000;
-  }
-  
-  .cover {
-    top: 0;
-    position: absolute;
-    background-color: rgb(174, 213, 235);
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    cursor: pointer;
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
-    -webkit-transform-origin: 0;
-    -ms-transform-origin: 0;
-    transform-origin: 0;
-    -webkit-box-shadow: 1px 1px 12px #000;
-    box-shadow: 1px 1px 12px #f0e4e4;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-  }
-  
-  .book:hover .cover {
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
-    -webkit-transform: rotatey(-80deg);
-    -ms-transform: rotatey(-80deg);
-    transform: rotatey(-80deg);
-  }
-  
-
-
-p {
-  font-size: 18px; /* Adjust text size */
-  font-weight: bold; /* Make the text bold */
-  color: #333; /* Darker color for better readability */
-  margin: 8px 0; /* Add vertical spacing between lines */
-  display: flex; /* Use flex for icon alignment */
-  align-items: center; /* Center-align text with icons */
-}
-
-
-
-/* Wrapper for cards */
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around; /* Space between rows */
-  gap: 20px; /* Space between cards */
-  margin: 20px auto;
-  margin-top: -100px;
-  max-width: 1200px; /* Optional: restrict the width of the container */
-}
-
-/* Individual card */
-.card {
-  flex: 1 1 calc(33.33% - 20px); /* Adjust width to fit 3 per row */
-  max-width: 300px; /* Optional: restrict the max width of a card */
-  display: flex;
-  justify-content: center;
-}
-
-/* Style for the book component remains the same */
 .book {
   position: relative;
   border-radius: 10px;
@@ -111,7 +17,6 @@ p {
 .cover {
   position: absolute;
   top: 0;
-  background-color: rgb(174, 213, 235);
   width: 100%;
   height: 100%;
   border-radius: 10px;
@@ -122,6 +27,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(to right, #42a5f5, #66bb6a); /* Blue to Green Gradient */
 }
 
 .book:hover .cover {
@@ -138,19 +44,33 @@ p {
   align-items: center;
 }
 
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  margin: 20px auto;
+  margin-top: -100px;
+  max-width: 1200px;
+}
+
+.card {
+  flex: 1 1 calc(33.33% - 20px);
+  max-width: 300px;
+  display: flex;
+  justify-content: center;
+}
 
 .header-text {
-  display: block; /* Makes span behave like a block element */
-  text-align: center; /* Centers the text horizontally */
-  font-size: 16px; /* Increase font size for emphasis */
+  display: block;
+  text-align: center;
+  font-size: 16px;
   font-family: "Times New Roman", Times, serif;
-  font-weight: bold; /* Bold text for better visibility */
-  color: #ecdbdb; /* Dark color for readability */
-  margin: 20px auto; /* Adds vertical spacing and centers the block */
-  /* background: linear-gradient(90deg, #1369f3, #42a5f5);  */
-  margin-top: 30px;
-  padding: 10px 20px; /* Padding for better spacing */
-  border-radius: 8px; /* Rounded corners for a modern look */
-  box-shadow: 0px 4px 6px rgba(227, 225, 225, 0.1); /* Subtle shadow for depth */
-  width: fit-content; /* Adjust width to fit the content */
+  font-weight: bold;
+  color: #ecdbdb;
+  margin: 20px auto;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(227, 225, 225, 0.1);
+  width: fit-content;
 }
