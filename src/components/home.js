@@ -1,7 +1,12 @@
 import style from "../styles/home.module.css";
 import { useNavigate } from "react-router-dom";
-
+import { useSelector } from "react-redux";
 const Home = () => {
+  const group = useSelector((state) => state.dropdown.group);
+  const state = useSelector((state) => state.dropdown.stateList.states);
+  console.log(group,state);
+  
+  
   const navigate = useNavigate();
   return (
     <div

@@ -3,8 +3,12 @@ import { useEffect, useState } from "react";
 import style from "../styles/register.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
+import { useSelector } from "react-redux";
+
 
 const Register = () => {
+  const groupList = useSelector((state) => state.dropdown.group);
+  const stateList = useSelector((state) => state.dropdown.stateList);
   const [state, setState] = useState([]);
   const [selectedState, setSelectedState] = useState("");
   const [district, setDistrict] = useState([]);
@@ -19,16 +23,18 @@ const Register = () => {
   const navigate = useNavigate();
 
   const getGroup = () => {
-    let url = "https://bloodsearchserver.onrender.com/formData/groups";
-    axios.get(url).then((res) => {
-      setGroup(res.data);
-    });
+    // let url = "https://bloodsearchserver.onrender.com/formData/groups";
+    // axios.get(url).then((res) => {
+    //   setGroup(res.data);
+    // });
+    setGroup(groupList)
   };
   const getState = () => {
-    let url = "https://bloodsearchserver.onrender.com/formData/states";
-    axios.get(url).then((res) => {
-      setState(res.data.states);
-    });
+    // let url = "https://bloodsearchserver.onrender.com/formData/states";
+    // axios.get(url).then((res) => {
+    //   setState(res.data.states);
+    // });
+    setState(stateList.states)
   };
   const handleStateChange = (e) => {
     const selectedState = e.target.value;

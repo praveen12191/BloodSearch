@@ -3,11 +3,15 @@ import "../styles/user.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { toast, Toaster } from "sonner";
+import { useSelector } from "react-redux";
+
 
 const UsersPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const data = location.state;
+  const groupListData = useSelector((state) => state.dropdown.group);
+  const stateListData = useSelector((state) => state.dropdown.stateList);
 
   const [flage, setFlage] = useState(data?.data?.donate || false);
   const [isEditable, setIsEditable] = useState(false);
@@ -32,11 +36,11 @@ const UsersPage = () => {
   // Fetch groups and states
   useEffect(() => {
     axios.get("https://bloodsearchserver.onrender.com/formData/groups").then((res) => {
-      setGroupList(res.data || []);
+      setGroupList(groupList || []);
     });
 
     axios.get("https://bloodsearchserver.onrender.com/formData/states").then((res) => {
-      setStateList(res.data?.states || []);
+      setStateList(stateList.states || []);
     });
   }, []);
 

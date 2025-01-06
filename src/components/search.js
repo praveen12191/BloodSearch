@@ -4,8 +4,12 @@ import Card from "./card";
 import { Toaster, toast } from "sonner";
 import { useNavigate } from "react-router-dom";
 import '../styles/card.css';
+import { useSelector } from "react-redux";
+
 
 const Search = () => {
+  const groupList = useSelector((state) => state.dropdown.group);
+  const stateList = useSelector((state) => state.dropdown.stateList);
   const navigate = useNavigate();
   const [selectedState, setSelectedState] = useState("");
   const [state, setState] = useState([]);
@@ -16,13 +20,22 @@ const Search = () => {
   const [data, setData] = useState([]);
 
   const getGroup = () => {
-    axios.get("https://bloodsearchserver.onrender.com/formData/groups")
-      .then((res) => setGroup(res.data));
+    
+    // axios.get("https://bloodsearchserver.onrender.com/formData/groups")
+    //   .then((res) => setGroup(res.data));
+    // console.log(group);
+    
+    setGroup(groupList)
+    console.log(group);
+    
   };
 
   const getState = () => {
-    axios.get("https://bloodsearchserver.onrender.com/formData/states")
-      .then((res) => setState(res.data.states));
+    // axios.get("https://bloodsearchserver.onrender.com/formData/states")
+    //   .then((res) => setState(res.data.states));
+    setState(stateList.states)
+    console.log(state);
+    
   };
 
   const handleStateChange = (e) => {
